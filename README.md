@@ -13,7 +13,7 @@ This model adapt T5 on Arabic Language by pre-training T5 on ArabicWikipedia, Ma
 | AraT5-Base-MSA   |     768      |      12     |      12       |  110K |TPUv3-8    |        1M     |  128   | 1.0x                  |70GB (MSA)              |  68.51/82.66 | 
 | AraT5-Base-Tweets|     768      |      12     |      12       |  110K |TPUv3-8    |        1M     |  128   | 1.0x                  |178GB (Tweets)          |  64.39/78.22 |
 | mT5-Base         |     768      |      12     |      12       |  250K |TPUv3-32   |        1M     |  1024  | 8.0x                  |6.3T tokens (mC4)|  71.55/83.78 | 
-| **ArabicT5-Base**    |     **512**      |      **8**      |      **20**       |  **32K**  |**TPUv3-32**   |       **256K**    |  **256**   | **0.5x**                  |**17GB (MSA)**          |  **72.75/85.49** | 
+| ArabicT5-Base    |     512     |      8      |      20      |  32K  |TPUv3-32   |       256K    |  256   | 0.5x                |17GB (MSA)         |  72.75/85.49 | 
 | ArabicT5-Large   |     768      |      12     |      16       |  32K  |TPUv3-128  |       500K    |  512   | 2.0x                  |17GB (MSA)          |  --/--       | 
 | ArabicT5-xLarge  |     768      |      12     |      36       |  32K  |TPUv3-128  |       500K    |  512   | 2.0x                  |17GB (MSA)          |  --/--       |  
 
