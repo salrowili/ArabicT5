@@ -9,7 +9,7 @@ This model adapt T5 on Arabic Language by pre-training T5 on ArabicWikipedia, Ma
 
 |     Model        | Hidden Layer | Atten. head | Atten. Layers | Vocab | Hardware  |Training Steps | Batch  |  Train x Batch Factor |Corpora                 | TyDi QA EM/F1|
 |------------------|--------------|-------------|---------------|-------|-----------|---------------|--------|-----------------------|------------------------|--------------|
-| AraT5-Base       |     768      |      12     |      12       |  110K |TPUv3-8    |        1M     |  128   | 1.0x                  |248GB 29B tokens (MSA + Tweets)    |  69.16/82.82 |  
+| AraT5-Base       |     768      |      12     |      12       |  110K |TPUv3-8    |        1M     |  128   | 1.0x                  |248GB (MSA + Tweets)    |  69.16/82.82 |  
 | AraT5-Base-MSA   |     768      |      12     |      12       |  110K |TPUv3-8    |        1M     |  128   | 1.0x                  |70GB (MSA)              |  68.51/82.66 | 
 | AraT5-Base-Tweets|     768      |      12     |      12       |  110K |TPUv3-8    |        1M     |  128   | 1.0x                  |178GB (Tweets)          |  64.39/78.22 |
 | mT5-Base         |     768      |      12     |      12       |  250K |TPUv3-32   |        1M     |  1024  | 8.0x                  |6.3T tokens (mC4)|  71.55/83.78 | 
