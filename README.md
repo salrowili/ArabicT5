@@ -25,7 +25,7 @@ This model adapt T5 on Arabic Language by pre-training T5 on ArabicWikipedia, Ma
 
 ## FineTuning our ArabicT5 model on generative and abstractive tasks with FLAX ###
 
-[![Open In Colab][COLAB]](https://github.com/salrowili/ArabicT5/blob/main/FineTuning_ArabicT5_with_FLAX_and_TPU.ipynb)
+[![Open In Colab][COLAB]](https://colab.research.google.com/github/salrowili/ArabicT5/blob/main/FineTuning_ArabicT5_with_FLAX_and_TPU.ipynb)
 
 # Acknowledgment
 
