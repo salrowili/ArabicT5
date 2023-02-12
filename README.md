@@ -12,15 +12,15 @@ This model adapt T5 on Arabic Language by pre-training T5 on ArabicWikipedia, Ma
 
 ## Pre-training Settings and Results on TyDi QA Development Dataset.
 
-|     Model        | Hidden Layer | Atten. head | Atten. Layers | Vocab | Hardware  |Training Steps | Batch  |  Train x Batch Factor |Corpora                 | TyDi QA EM/F1| Link |
-|------------------|--------------|-------------|---------------|-------|-----------|---------------|--------|-----------------------|------------------------|--------------|---|
-| AraT5-Base       |     768      |      12     |      12       |  110K |TPUv3-8    |        1M     |  128   | 1.0x                  |248GB 29B tokens (MSA + Tweets)    |  69.16/82.82 | [![link][HF]](https://huggingface.co/UBC-NLP/AraT5-base) |  
-| AraT5-Base-MSA   |     768      |      12     |      12       |  110K |TPUv3-8    |        1M     |  128   | 1.0x                  |70GB (MSA)              |  68.51/82.66 | [![link][HF]](https://huggingface.co/UBC-NLP/AraT5-msa-base) |
-| AraT5-Base-Tweets|     768      |      12     |      12       |  110K |TPUv3-8    |        1M     |  128   | 1.0x                  |178GB (Tweets)          |  64.39/78.22 | [![link][HF]](https://huggingface.co/UBC-NLP/AraT5-tweet-base) |
-| mT5-Base         |     768      |      12     |      12       |  250K |TPUv3-32   |        1M     |  1024  | 8.0x                  |6.3T tokens (mC4)|  72.53/85.04 | [![link][HF]](https://huggingface.co/google/mt5-base) |
-| ArabicT5-Base    |     512      |      8     |      20      |  32K  |TPUv3-32   |       256K    |  256   | 0.5x                 |17GB (MSA)          |  72.75/85.49 | [![link][HF]](https://huggingface.co/sultan/ArabicT5-Base)|
-| ArabicT5-Large   |     768      |      12     |      16       |  32K  |TPUv3-128  |       500K    |  512   | 2.0x                  |17GB (MSA)          |  74.27/86.37      | [![link][HF]](https://huggingface.co/sultan/ArabicT5-Large) |
-| ArabicT5-xLarge  |     768      |      12     |      36       |  32K  |TPUv3-128  |       500K    |  512   | 2.0x                  |17GB (MSA)          |  74.38/86.60       | [![link][HF]](https://huggingface.co/sultan/ArabicT5-xLarge) | 
+|     Model        | Hidden Layer | Atten. head | Atten. Layers | Vocab | Training Steps | Batch  |  Train x Batch Factor |Corpora                 | TyDi QA EM/F1| Link |
+|------------------|--------------|-------------|---------------|-------|---------------|--------|-----------------------|------------------------|--------------|---|
+| AraT5-Base       |     768      |      12     |      12       |  110K |        1M     |  128   | 1.0x                  |248GB 29B tokens (MSA + Tweets)    |  69.16/82.82 | [![link][HF]](https://huggingface.co/UBC-NLP/AraT5-base) |  
+| AraT5-Base-MSA   |     768      |      12     |      12       |  110K |        1M     |  128   | 1.0x                  |70GB (MSA)              |  68.51/82.66 | [![link][HF]](https://huggingface.co/UBC-NLP/AraT5-msa-base) |
+| AraT5-Base-Tweets|     768      |      12     |      12       |  110K |        1M     |  128   | 1.0x                  |178GB (Tweets)          |  64.39/78.22 | [![link][HF]](https://huggingface.co/UBC-NLP/AraT5-tweet-base) |
+| mT5-Base         |     768      |      12     |      12       |  250K |        1M     |  1024  | 8.0x                  |6.3T tokens (mC4)|  72.53/85.04 | [![link][HF]](https://huggingface.co/google/mt5-base) |
+| ArabicT5-Base    |     512      |      8     |      20      |  32K  |       256K    |  256   | 0.5x                 |17GB (MSA)          |  72.75/85.49 | [![link][HF]](https://huggingface.co/sultan/ArabicT5-Base)|
+| ArabicT5-Large   |     768      |      12     |      16       |  32K  |       500K    |  512   | 2.0x                  |17GB (MSA)          |  74.27/86.37      | [![link][HF]](https://huggingface.co/sultan/ArabicT5-Large) |
+| ArabicT5-xLarge  |     768      |      12     |      36       |  32K  |       500K    |  512   | 2.0x                  |17GB (MSA)          |  74.38/86.60       | [![link][HF]](https://huggingface.co/sultan/ArabicT5-xLarge) | 
 
 
 ## FineTuning our ArabicT5 model on generative and abstractive tasks with FLAX ###
