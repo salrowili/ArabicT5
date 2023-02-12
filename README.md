@@ -12,7 +12,7 @@ This model adapt T5 on Arabic Language by pre-training T5 on ArabicWikipedia, Ma
 
 ## Pre-training Settings and Results on TyDi QA Development Dataset.
 
-|     Model        | Hidden Layer | Atten. head | Atten. Layers | Vocab | Training Steps | Batch  |  Train x Batch Factor |Corpora                 | TyDi QA EM/F1| Link |
+|     Model        | Hidden Layer | Atten. head | Atten. Layers | Vocab | Steps | Batch  |  Train x Batch Factor |Corpora                 | TyDi QA EM/F1| Link |
 |------------------|--------------|-------------|---------------|-------|---------------|--------|-----------------------|------------------------|--------------|---|
 | AraT5-Base       |     768      |      12     |      12       |  110K |        1M     |  128   | 1.0x                  |248GB 29B tokens (MSA + Tweets)    |  69.16/82.82 | [![link][HF]](https://huggingface.co/UBC-NLP/AraT5-base) |  
 | AraT5-Base-MSA   |     768      |      12     |      12       |  110K |        1M     |  128   | 1.0x                  |70GB (MSA)              |  68.51/82.66 | [![link][HF]](https://huggingface.co/UBC-NLP/AraT5-msa-base) |
