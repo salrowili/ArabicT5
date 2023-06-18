@@ -1,26 +1,55 @@
 # ArabicT5: Efficient Adaptation of T5 on Arabic Language
 
-
 # Model Description
 
-This model adapt T5 on Arabic Language by pre-training T5 on ArabicWikipedia, Marefa, Hindawi Books and collection of Arabic News. Total Corpora size is 17GB. We restrict our corpora to News and Encyclopedias to enhance the performance of the model on informative tasks such as Factoid Question Answering and Generative task that uses classic Arabic ( الفصحى ). This model uses an efficient implementation of T5 which reduces the fine-tuning and memory used [Scale Efficiently: Insights from Pre-training and Fine-tuning Transformers
-](https://arxiv.org/abs/2109.10686) . 
+This model adapts T5 on the Arabic Language by pre-training T5 on : 
+- Arabic Wikipedia.
+- Marefa encyclopedia.
+- Hindawi Books.
+- a collection of Arabic News.
+
+Total Corpora size is 17GB. We restrict our corpora to News and Encyclopedias to enhance the performance of the model on informative tasks such as Factoid Question Answering and Generative task that uses classic Arabic ( الفصحى ). This also gives our models an advantage if you don't want the generative text to contain inappropriate language. This model uses an efficient implementation of T5 which reduces the fine-tuning and memory used [Link](https://arxiv.org/abs/2109.10686) .
+
 
 ## Link to our Paper
 
 [Generative Approach for Gender-Rewriting Task with ArabicT5](https://aclanthology.org/2022.wanlp-1.55/)
 
-## Pre-training Settings and Results on TyDi QA Development Dataset.
 
-|     Model        | Hidden Layer | Atten. head | Atten. Layers | Vocab | Steps | Batch  |  Train x Batch Factor |Corpora                 | TyDi QA EM/F1| Link |
-|------------------|--------------|-------------|---------------|-------|---------------|--------|-----------------------|------------------------|--------------|---|
-| AraT5-Base       |     768      |      12     |      12       |  110K |        1M     |  128   | 1.0x                  |248GB 29B tokens (MSA + Tweets)    |  69.16/82.82 | [![link][HF]](https://huggingface.co/UBC-NLP/AraT5-base) |  
-| AraT5-Base-MSA   |     768      |      12     |      12       |  110K |        1M     |  128   | 1.0x                  |70GB (MSA)              |  68.51/82.66 | [![link][HF]](https://huggingface.co/UBC-NLP/AraT5-msa-base) |
-| AraT5-Base-Tweets|     768      |      12     |      12       |  110K |        1M     |  128   | 1.0x                  |178GB (Tweets)          |  64.39/78.22 | [![link][HF]](https://huggingface.co/UBC-NLP/AraT5-tweet-base) |
-| mT5-Base         |     768      |      12     |      12       |  250K |        1M     |  1024  | 8.0x                  |6.3T tokens (mC4)|  72.53/85.04 | [![link][HF]](https://huggingface.co/google/mt5-base) |
-| ArabicT5-Base    |     512      |      8     |      20      |  32K  |       256K    |  256   | 0.5x                 |17GB (MSA)          |  72.75/85.49 | [![link][HF]](https://huggingface.co/sultan/ArabicT5-Base)|
-| ArabicT5-Large   |     768      |      12     |      16       |  32K  |       500K    |  512   | 2.0x                  |17GB (MSA)          |  74.27/86.37      | [![link][HF]](https://huggingface.co/sultan/ArabicT5-Large) |
-| ArabicT5-xLarge  |     768      |      12     |      36       |  32K  |       500K    |  512   | 2.0x                  |17GB (MSA)          |  74.38/86.60       | [![link][HF]](https://huggingface.co/sultan/ArabicT5-xLarge) | 
+## Pre-training Settings and Results on TyDi QA Development Dataset ( Model in this card is highlighted in bold )
+
+|     Model        | Hidden Layer | Atten. head | Atten. Layers | Vocab | Hardware  |Training Steps | Batch  |  Train x Batch Factor |Corpora                 |
+|------------------|--------------|-------------|---------------|-------|-----------|---------------|--------|-----------------------|------------------------|
+| AraT5-Base       |     768      |      12     |      12       |  110K |TPUv3-8    |        1M     |  128   | 1.0x                  |248GB 29B tokens (MSA + Tweets)    |
+| AraT5-Base-MSA   |     768      |      12     |      12       |  110K |TPUv3-8    |        1M     |  128   | 1.0x                  |70GB (MSA)              |
+| AraT5-Base-Tweets|     768      |      12     |      12       |  110K |TPUv3-8    |        1M     |  128   | 1.0x                  |178GB (Tweets)          |
+| AraBART-Base     |     768      |      12     |      12       |  50K | 128 V100 GPUs (60h)    |25 epochs|  -     | -                     |73GB (MSA)          |
+| mT5-Base         |     768      |      12     |      12       |  250K |TPUv3-32   |        1M     |  1024  | 8.0x                  |6.3T tokens (mC4)|
+| ArabicT5-Base   |     512      |      8     |      20      |  32K  |TPUv3-32   |       256K    |  256   | 0.5x                 |17GB (MSA)          |
+| ArabicT5-Large    |     768      |      12     |      16       |  32K  |TPUv3-128  |       500K    |  512   | 2.0x                  |17GB (MSA)          |
+| ArabicT5-xLarge  |     768      |      12     |      36       |  32K  |TPUv3-128  |       500K    |  512   | 2.0x                  |17GB (MSA)          |
+
+##  Results on TyDi QA, HARD, Sentiment Analysis, Sarcasm Detection ( Best Score is highlighted in bold )
+
+|    Model            | <center>TyDi QA| <center>HARD| <center>ArSarcasm-v2-Sentiment| <center>ArSarcasm-v2-Sarcasm| XL-SUM |
+|----------------------|---------------|---------------------|-------------------------------------|----------------------------------|----------------------------------
+| AraT5-Base           |  <center>70.36/84.21  |<center>96.49|<center>69.7/72.63|<center>60.44|<center>30.31|
+| AraT5-Base-MSA       |  <center>70.90/84.00  |<center>**96.52**|<center>70.03/72.73|<center>60.69|<center>27.36|
+| AraT5-Base-Tweets    |  <center>65.14/79.00  |<center>96.26|<center>70.67/73.52|<center>61.11|<center>25.08|
+| mT5-Base             |  <center>72.20/84.13  |<center>96.24|<center>67.33/68.78|<center>52.18|<center>25.68|
+| AraBART-Base         |  <center>48.75/71.15  |<center>96.11|<center>66.23/68.18|<center>56.30|<center>31.20|
+| ArabicT5-Base        |  <center>70.79/84.76  |<center>96.36|<center>68.93/71.20|<center>58.93|<center>29.19|
+| ArabicT5-Large       |  <center>73.29/86.08  |<center>96.40|<center>70.4/73.01|<center>59.79|<center>30.30|
+| ArabicT5-xLarge      |  <center>**75.46/87.12**  |<center>96.50| <center>**72.23/75.17**|<center>**61.66**|<center>**31.70**|
+
+Evaluation Metrics: TyDi QA (EM/F1), HARD (Accuracy), Sentiment Analysis (Accuracy / F1-PN positive-negative), Sarcasm Detection (F1-sarcastic), XL-SUM (Rouge-L with Stemmer).
+
+You can download the full details of our grid search for all models in all tasks above from this link: https://github.com/salrowili/ArabicT5/raw/main/ArabicT5_Grid_Search.zip
+
+For the XL-Sum task, we choose our best run for each model using the eval set. We use the official evaluation script from XL-Sum, which uses the stemmer function, which may show better results than papers that don't use the stemmer function. The official XL-Sum paper uses a stemmer function.
+
+In our XL-Sum results, although we show that AraT5-Base exceeded our ArabicT5-Large, in most runs, our ArabicT5-Large shows better results, as you can see from our grid search file.
+
 
 
 ## FineTuning our ArabicT5 model on generative and abstractive tasks with FLAX ###
@@ -29,7 +58,7 @@ This model adapt T5 on Arabic Language by pre-training T5 on ArabicWikipedia, Ma
 
 # Acknowledgment
 
-We would like to acknowledge the support we have from Tensorflow Research Cloud (TFRC) team to grant us access to TPUv3 units.
+We want to acknowledge the support from the Tensorflow Research Cloud (TRC) team to grant us access to TPUv3 units.
 
 
 
