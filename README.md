@@ -10,6 +10,16 @@ This model adapts T5 on the Arabic Language by pre-training T5 on :
 
 Total Corpora size is 17GB. We restrict our corpora to News and Encyclopedias to enhance the performance of the model on informative tasks such as Factoid Question Answering and Generative task that uses classic Arabic ( الفصحى ). This also gives our models an advantage if you don't want the generative text to contain inappropriate language. This model uses an efficient implementation of T5 which reduces the fine-tuning and memory used [Link](https://arxiv.org/abs/2109.10686) .
 
+## Link to our models
+
+[ArabicT5-Base](https://huggingface.co/sultan/ArabicT5-Base)
+
+
+[ArabicT5-Large](https://huggingface.co/sultan/ArabicT5-Large)
+
+
+[ArabicT5-xLarge](https://huggingface.co/sultan/ArabicT5-xLarge)
+
 
 ## Link to our Paper
 
