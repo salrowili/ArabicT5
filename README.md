@@ -99,6 +99,10 @@ Please note that we can further speed up our ArabicT5-Base by increasing the bat
 
 [![Open In Colab][COLAB]](https://colab.research.google.com/github/salrowili/ArabicT5/blob/main/FineTuning_ArabicT5_with_FLAX_and_TPU.ipynb)
 
+# FineTuning our small efficient ArabicT5-49GB-Small model with Torch on 3070 laptop GPU ###
+
+[![Open In Colab][COLAB]](https://colab.research.google.com/github/salrowili/ArabicT5/blob/main/ArabicT5_49GB_Small_on_3070_Laptop_GPU.ipynb)
+
 [COLAB]: https://colab.research.google.com/assets/colab-badge.svg
 
 
