@@ -52,12 +52,9 @@ For the XL-Sum task, we choose our best run for each model using the eval set. W
 
 # FineTuning our efficient ArabicT5-49GB-Small model with Torch on 3070 laptop GPU ###
 
-If you are running your code on a laptop GPU (e.g., a gaming laptop) or limited GPU memory, we recommended using our ArabicT5-49GB-Small model, which was the only model from the list that we were able to run on 3070 Laptop card with a batch size of 8. We manage to achieve an F1 score of 85.391 (slightly better than our FLAX code ) on the TyDi QA task. See the notebook below for reference : 
-
 [![Open In Colab][COLAB]](https://colab.research.google.com/github/salrowili/ArabicT5/blob/main/ArabicT5_49GB_Small_on_3070_Laptop_GPU.ipynb)
 
-
-
+If you are running your code on a laptop GPU (e.g., a gaming laptop) or limited GPU memory, we recommended using our ArabicT5-49GB-Small model, which was the only model from the list that we were able to run on 3070 Laptop card with a batch size of 8. We manage to achieve an F1 score of 85.391 (slightly better than our FLAX code ) on the TyDi QA task. 
 
 
 # FineTuning our ArabicT5 model on generative and abstractive tasks with FLAX ###
@@ -67,14 +64,17 @@ If you are running your code on a laptop GPU (e.g., a gaming laptop) or limited 
 [COLAB]: https://colab.research.google.com/assets/colab-badge.svg
 
 
+# FineTuning ArabicT5 on TPUv3-8 with free Kaggle ###
+
+
+https://www.kaggle.com/code/sultanalrowili/arabict5-on-tydi-with-free-tpuv3-8-with-kaggle
+
+
+
 # Continual Pre-Training of ArabicT5 with T5x
 if you want to continue pre-training ArabicT5 on your own data, we have uploaded the raw t5x checkpoint to this link https://huggingface.co/sultan/ArabicT5-49GB-base/blob/main/arabict5_49GB_base_t5x.tar.gz
 We will soon share a tutorial on how you can do that for free with Kaggle TPU
 
-
-## GitHub Page
-
-https://github.com/salrowili/ArabicT5
 
 
 # Acknowledgment
